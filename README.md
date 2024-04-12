@@ -21,3 +21,5 @@ There are two files provided one for each version, I recommend running either on
 ## Other things of note
 The bot doesn't have any flexibility yet in it's answers or use cases, it only works in a very specific scenario keep this in mind.
 We need to change the human first interaction/start of interaction by the user speaking. It feels quite unnatural and weird.
+
+### _Made by: Group 23 (P. A. Arciszewski (2813638), Carlos Tam (2804219), Omar Rampado (2817231), Sander Bindels (2589706))_
