@@ -12,7 +12,7 @@ There are two files provided one for each version, I recommend running either on
 ## Interacting with the bot
 - To start the bot it is required to press the green start button, it can be found in the blocky skill editor.
 - After pressing start the bot will be armed
-- ~~It will be waiting for someone to approach it, to simulate this you need to go to one of the windows, spawn a user and drag him into the activation zone~~~~
+- ~~It will be waiting for someone to approach it, to simulate this you need to go to one of the windows, spawn a user and drag him into the activation zone~~
 - The bot will wait for you to say hello or another greeting.
 - The conversation starts, some notable phrases you need to know for it to work is: __Ian Goodfellow__ (He is the author of the book in question) and __Deep learning__ (This is the title of the book)
 - The bot only has answers prepered for positive answer so try and do affirmations such as yes and okey unless it is asking for something different from context.
