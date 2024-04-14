@@ -18,12 +18,12 @@
             <field name="gesture">BrowRaise</field>
             <value name="strength">
               <shadow type="text" id="ZQ.;=2XZ12dQo+Mfzh;;">
-                <field name="value">1.3</field>
+                <field name="value">1</field>
               </shadow>
             </value>
             <value name="duration">
               <shadow type="text" id="HOvk`V.-4^4}{nn*i0Dv">
-                <field name="value">3</field>
+                <field name="value">5</field>
               </shadow>
             </value>
             <next>
@@ -60,43 +60,20 @@
   <block type="state" id="nvPW$4|YQrGYG-!-EI17" deletable="false" editable="false" x="-939" y="-291">
     <field name="stateName">start</field>
     <statement name="actions">
-      <block type="attend_angle" id="l#U-iThmU;SFAG6``lTu">
-        <value name="y">
-          <shadow type="text" id="=EaY8:H]MlNO3}`tx-Kc">
-            <field name="value">0</field>
-          </shadow>
-        </value>
-        <value name="x">
-          <shadow type="text" id="{jaVVg*/-0V`[.Bd638z">
-            <field name="value">0</field>
-          </shadow>
-        </value>
+      <block type="action_texture_dropdown" id="n1Z4a/@{v]|R!XnC/_LT">
+        <field name="texture">Titan</field>
         <next>
-          <block type="action_texture_dropdown" id="n1Z4a/@{v]|R!XnC/_LT">
-            <field name="texture">Titan</field>
-            <next>
-              <block type="action_voice" id="-QhbG%RS5ks8u@pWrsX1">
-                <field name="voice">Danielle-Neural (en-US) - Amazon Polly</field>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-    <next>
-      <block type="onuserenter" id="Vw8=CH(u*(nW$5!dH/|E">
-        <statement name="actions">
-          <block type="attend_user" id="1eyK2xPd_@NKAn~-DVr0">
-            <field name="user">that user</field>
+          <block type="action_voice" id="-QhbG%RS5ks8u@pWrsX1">
+            <field name="voice">Danielle-Neural (en-US) - Amazon Polly</field>
             <next>
               <block type="goto" id="K|fsIh#OOnf61w^/ff!y">
                 <field name="stateName">greeting</field>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
-    </next>
+    </statement>
   </block>
   <block type="state" id="w~bU-1w328DPd7?ThuoS" x="-416" y="-257">
     <field name="stateName">greeting</field>
@@ -105,12 +82,12 @@
         <field name="gesture">BigSmile</field>
         <value name="strength">
           <shadow type="text" id="G[hnD)8Hf7Omy@#ey%KU">
-            <field name="value">1.3</field>
+            <field name="value">1</field>
           </shadow>
         </value>
         <value name="duration">
           <shadow type="text" id="alwTgRxT;f|}/DIb7L^N">
-            <field name="value">2</field>
+            <field name="value">5</field>
           </shadow>
         </value>
         <next>
@@ -124,15 +101,30 @@
           <block type="intent_greeting" id=",-Ydu5GDXvZQ}|JH%Snu"></block>
         </value>
         <statement name="actions">
-          <block type="say_utterance" id="#ax.+oVHE(|D;s.Fo#(5">
-            <statement name="utterance">
-              <block type="utt_text" id="(8nNO!e_X+20^N0gyG_Z">
-                <field name="text">hello</field>
-              </block>
-            </statement>
+          <block type="action_gesture_param" id=";S}OhDGdo#U15n64*P,w">
+            <field name="gesture">BigSmile</field>
+            <value name="strength">
+              <shadow type="text" id="c/}q?GS=k@$Fl0J]}`?#">
+                <field name="value">1</field>
+              </shadow>
+            </value>
+            <value name="duration">
+              <shadow type="text" id="/n.)eSm85dnhf!dyK~yJ">
+                <field name="value">5</field>
+              </shadow>
+            </value>
             <next>
-              <block type="goto" id="|PkPv1`A6ChcM?``N,$I">
-                <field name="stateName">smallTalk</field>
+              <block type="say_utterance" id="#ax.+oVHE(|D;s.Fo#(5">
+                <statement name="utterance">
+                  <block type="utt_text" id="(8nNO!e_X+20^N0gyG_Z">
+                    <field name="text">hello</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="|PkPv1`A6ChcM?``N,$I">
+                    <field name="stateName">smallTalk</field>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
@@ -143,14 +135,29 @@
   <block type="state" id="IJFm{C+H5Qv%Nki.g2Rr" x="98" y="-270">
     <field name="stateName">smallTalk</field>
     <statement name="actions">
-      <block type="say_utterance" id="9vCWi;TI*sVqQN!eZblg">
-        <statement name="utterance">
-          <block type="utt_text" id="lC!gDD_j1aw2}NC}JPb*">
-            <field name="text">How are you?</field>
-          </block>
-        </statement>
+      <block type="action_gesture_param" id="n]+M%4,e}+`J20.h{/H;">
+        <field name="gesture">BigSmile</field>
+        <value name="strength">
+          <shadow type="text" id="VKuD6Hklb{ZVQ4G(z7!W">
+            <field name="value">1</field>
+          </shadow>
+        </value>
+        <value name="duration">
+          <shadow type="text" id="5CNX.5().6Y~V6T7dA1{">
+            <field name="value">5</field>
+          </shadow>
+        </value>
         <next>
-          <block type="listen" id="0~_KwEzfQ#k@GE.qptaT"></block>
+          <block type="say_utterance" id="9vCWi;TI*sVqQN!eZblg">
+            <statement name="utterance">
+              <block type="utt_text" id="lC!gDD_j1aw2}NC}JPb*">
+                <field name="text">How are you?</field>
+              </block>
+            </statement>
+            <next>
+              <block type="listen" id="0~_KwEzfQ#k@GE.qptaT"></block>
+            </next>
+          </block>
         </next>
       </block>
     </statement>
@@ -166,12 +173,12 @@
             <field name="gesture">BigSmile</field>
             <value name="strength">
               <shadow type="text" id="GJ@LEArG/_),0d%AFzsj">
-                <field name="value">1.3</field>
+                <field name="value">1</field>
               </shadow>
             </value>
             <value name="duration">
               <shadow type="text" id="L8;M*%!aA/_a}T//)oAm">
-                <field name="value">2</field>
+                <field name="value">5</field>
               </shadow>
             </value>
             <next>
@@ -207,12 +214,12 @@
             <field name="gesture">BrowRaise</field>
             <value name="strength">
               <shadow type="text" id="Ue~0lTCt6{6|;hbw+n::">
-                <field name="value">1.3</field>
+                <field name="value">1</field>
               </shadow>
             </value>
             <value name="duration">
               <shadow type="text" id="l.U3bCz7Fp[k8g^SC}*J">
-                <field name="value">3</field>
+                <field name="value">5</field>
               </shadow>
             </value>
             <next>
@@ -239,12 +246,12 @@
         <field name="gesture">BigSmile</field>
         <value name="strength">
           <shadow type="text" id="*6d0_I}v$)axkHMkyer5">
-            <field name="value">1.3</field>
+            <field name="value">1</field>
           </shadow>
         </value>
         <value name="duration">
           <shadow type="text" id="G,W@/PkXqNu?*!Ux4.6f">
-            <field name="value">3</field>
+            <field name="value">5</field>
           </shadow>
         </value>
         <next>
@@ -266,12 +273,12 @@
                     <field name="gesture">BrowRaise</field>
                     <value name="strength">
                       <shadow type="text" id="E?0LuxYEp:5}b/K13!dz">
-                        <field name="value">1.3</field>
+                        <field name="value">1</field>
                       </shadow>
                     </value>
                     <value name="duration">
                       <shadow type="text" id="BV/v#eV|g8_u{GTizCem">
-                        <field name="value">3</field>
+                        <field name="value">5</field>
                       </shadow>
                     </value>
                     <next>
@@ -313,48 +320,63 @@
   <block type="state" id=")E%c:r~Pt=[%2Y_|P0-O" x="3074" y="-310">
     <field name="stateName">information</field>
     <statement name="actions">
-      <block type="say_utterance" id="~F?HA7t};.jRzJ/Fhat=">
-        <statement name="utterance">
-          <block type="utt_text" id="rv3*mVuLhKVP7l$k.,RI">
-            <field name="text">The User is required to handle any item in the library collection with care</field>
-          </block>
-        </statement>
+      <block type="action_gesture_param" id="h*j?|t`Qm;AW+u3QU]T1">
+        <field name="gesture">BrowFrown</field>
+        <value name="strength">
+          <shadow type="text" id="tkUP/Im$!8wYCKYI2w.l">
+            <field name="value">1.0</field>
+          </shadow>
+        </value>
+        <value name="duration">
+          <shadow type="text" id="UeCK+pCYRc%ECmAJyKn*">
+            <field name="value">15</field>
+          </shadow>
+        </value>
         <next>
-          <block type="say_utterance" id="puji;,gA3tp1`x|,y(-m">
+          <block type="say_utterance" id="~F?HA7t};.jRzJ/Fhat=">
             <statement name="utterance">
-              <block type="utt_text" id="B$QQ`?$f/V;}LZL@A2{^">
-                <field name="text">The loanee is responsible and may be held liable for any damages to the loaned out book</field>
+              <block type="utt_text" id="rv3*mVuLhKVP7l$k.,RI">
+                <field name="text">The User is required to handle any item in the library collection with care</field>
               </block>
             </statement>
             <next>
-              <block type="say_utterance" id="Z.R+JiTWAlyoWD*eT*|l">
+              <block type="say_utterance" id="puji;,gA3tp1`x|,y(-m">
                 <statement name="utterance">
-                  <block type="utt_text" id="onB{0pIg]izd@oh7#,eb">
-                    <field name="text">The User is forbidden to lend any item which is on loan from the library to any third party</field>
+                  <block type="utt_text" id="B$QQ`?$f/V;}LZL@A2{^">
+                    <field name="text">The loanee is responsible and may be held liable for any damages to the loaned out book</field>
                   </block>
                 </statement>
                 <next>
-                  <block type="say_utterance" id="/$HrSqXf]7wqA8ZoRXiy">
+                  <block type="say_utterance" id="Z.R+JiTWAlyoWD*eT*|l">
                     <statement name="utterance">
-                      <block type="utt_text" id="Ml0X9k1izF|?9T?u7pBl">
-                        <field name="text">Do you accept these conditions?</field>
+                      <block type="utt_text" id="onB{0pIg]izd@oh7#,eb">
+                        <field name="text">The User is forbidden to lend any item which is on loan from the library to any third party</field>
                       </block>
                     </statement>
                     <next>
-                      <block type="action_gesture_param" id=";55IBhZdN-|Wa{t|.+(s">
-                        <field name="gesture">BrowRaise</field>
-                        <value name="strength">
-                          <shadow type="text" id="Tj1*@,WetGni6EXPX3Np">
-                            <field name="value">1.3</field>
-                          </shadow>
-                        </value>
-                        <value name="duration">
-                          <shadow type="text" id="_|:~$LEq*|]~bTF5pjdV">
-                            <field name="value">3</field>
-                          </shadow>
-                        </value>
+                      <block type="say_utterance" id="/$HrSqXf]7wqA8ZoRXiy">
+                        <statement name="utterance">
+                          <block type="utt_text" id="Ml0X9k1izF|?9T?u7pBl">
+                            <field name="text">Do you accept these conditions?</field>
+                          </block>
+                        </statement>
                         <next>
-                          <block type="listen" id="oy5:oeEK/^/3oU2mk8%p"></block>
+                          <block type="action_gesture_param" id=";55IBhZdN-|Wa{t|.+(s">
+                            <field name="gesture">BrowRaise</field>
+                            <value name="strength">
+                              <shadow type="text" id="Tj1*@,WetGni6EXPX3Np">
+                                <field name="value">1</field>
+                              </shadow>
+                            </value>
+                            <value name="duration">
+                              <shadow type="text" id="_|:~$LEq*|]~bTF5pjdV">
+                                <field name="value">5</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="listen" id="oy5:oeEK/^/3oU2mk8%p"></block>
+                            </next>
+                          </block>
                         </next>
                       </block>
                     </next>
@@ -372,15 +394,30 @@
           <block type="intent_yes" id="prMptksq?zm/;dnUnGnh"></block>
         </value>
         <statement name="actions">
-          <block type="say_utterance" id="!:nyKL%y#TH(*IRZfXr[">
-            <statement name="utterance">
-              <block type="utt_text" id="M)w5%m.1Va8zW,yXlQFY">
-                <field name="text">Alright perfect, the book should be ready at the pickup desk in 10 minutes</field>
-              </block>
-            </statement>
+          <block type="action_gesture_param" id="5ObzePfUqG?`L?/##D!T">
+            <field name="gesture">BigSmile</field>
+            <value name="strength">
+              <shadow type="text" id="hk?5.qjK,T%:=?IoA~ST">
+                <field name="value">1</field>
+              </shadow>
+            </value>
+            <value name="duration">
+              <shadow type="text" id="Peqn:.6ce,6nz!Yl7RE$">
+                <field name="value">5</field>
+              </shadow>
+            </value>
             <next>
-              <block type="goto" id="_jD-X2uSOdTv{pvq1Nh_">
-                <field name="stateName">exitWait</field>
+              <block type="say_utterance" id="!:nyKL%y#TH(*IRZfXr[">
+                <statement name="utterance">
+                  <block type="utt_text" id="M)w5%m.1Va8zW,yXlQFY">
+                    <field name="text">Alright perfect, the book should be ready at the pickup desk in 10 minutes</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="_jD-X2uSOdTv{pvq1Nh_">
+                    <field name="stateName">exitWait</field>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
@@ -395,12 +432,12 @@
         <field name="gesture">BigSmile</field>
         <value name="strength">
           <shadow type="text" id="n,,W47lt,kt~=t:N]`p(">
-            <field name="value">1.3</field>
+            <field name="value">1</field>
           </shadow>
         </value>
         <value name="duration">
           <shadow type="text" id="1uNA7o(pU+P,kAZxd6U~">
-            <field name="value">3</field>
+            <field name="value">5</field>
           </shadow>
         </value>
         <next>
@@ -476,12 +513,12 @@
             <field name="gesture">BrowRaise</field>
             <value name="strength">
               <shadow type="text" id="6@CAS:vX[q(`7c)]~K!^">
-                <field name="value">1.3</field>
+                <field name="value">1</field>
               </shadow>
             </value>
             <value name="duration">
               <shadow type="text" id="yN`NYZgZi(kiOIuumx4D">
-                <field name="value">3</field>
+                <field name="value">5</field>
               </shadow>
             </value>
             <next>
@@ -527,12 +564,12 @@
             <field name="gesture">BrowRaise</field>
             <value name="strength">
               <shadow type="text" id="9hjzFzB:[Cp6X6{xnfly">
-                <field name="value">1.3</field>
+                <field name="value">1</field>
               </shadow>
             </value>
             <value name="duration">
               <shadow type="text" id="uKb=OB|CkekTt!__cRoo">
-                <field name="value">3</field>
+                <field name="value">5</field>
               </shadow>
             </value>
             <next>
@@ -567,16 +604,16 @@
   <block type="state" id="D0wrE{bj$90@ARx2I?rN" x="1564" y="-129">
     <field name="stateName">askTitle</field>
     <statement name="actions">
-      <block type="action_gesture_param" id="Irh~QGyw}(IBwv!Y@d1S">
-        <field name="gesture">BrowRaise</field>
+      <block type="action_gesture_param" id="Ryxv10kKCQC{G;K]N6f:">
+        <field name="gesture">BigSmile</field>
         <value name="strength">
-          <shadow type="text" id="6i}Duiaa`z,o?!JyMN[u">
-            <field name="value">1.3</field>
+          <shadow type="text" id="Xz0kwRTu~(1}s?@|)9`*">
+            <field name="value">1</field>
           </shadow>
         </value>
         <value name="duration">
-          <shadow type="text" id="H4DVJZzgOIqwzfUGb[(J">
-            <field name="value">3</field>
+          <shadow type="text" id="j!P!]z.t$yN}_]Ie8n.j">
+            <field name="value">5</field>
           </shadow>
         </value>
         <next>
@@ -612,12 +649,12 @@
                 <field name="gesture">BigSmile</field>
                 <value name="strength">
                   <shadow type="text" id="@gQa.MubaOYR)UHa]gD_">
-                    <field name="value">1.3</field>
+                    <field name="value">1</field>
                   </shadow>
                 </value>
                 <value name="duration">
                   <shadow type="text" id="^G~g{0TX,xtrQb`PqOsw">
-                    <field name="value">3</field>
+                    <field name="value">5</field>
                   </shadow>
                 </value>
                 <next>

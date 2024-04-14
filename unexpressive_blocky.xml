@@ -42,73 +42,23 @@
       </block>
     </next>
   </block>
-  <block type="state" id="nvPW$4|YQrGYG-!-EI17" deletable="false" editable="false" x="-450" y="-328">
+  <block type="state" id="nvPW$4|YQrGYG-!-EI17" deletable="false" editable="false" x="-551" y="-244">
     <field name="stateName">start</field>
     <statement name="actions">
-      <block type="attend_angle" id="l#U-iThmU;SFAG6``lTu">
-        <value name="y">
-          <shadow type="text" id="=EaY8:H]MlNO3}`tx-Kc">
-            <field name="value">0</field>
-          </shadow>
-        </value>
-        <value name="x">
-          <shadow type="text" id="{jaVVg*/-0V`[.Bd638z">
-            <field name="value">0</field>
-          </shadow>
-        </value>
+      <block type="action_texture_dropdown" id="n1Z4a/@{v]|R!XnC/_LT">
+        <field name="texture">Titan</field>
         <next>
-          <block type="action_texture_dropdown" id="n1Z4a/@{v]|R!XnC/_LT">
-            <field name="texture">Titan</field>
-            <next>
-              <block type="action_voice" id="-QhbG%RS5ks8u@pWrsX1">
-                <field name="voice">Danielle-Neural (en-US) - Amazon Polly</field>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-    <next>
-      <block type="onuserenter" id="Vw8=CH(u*(nW$5!dH/|E">
-        <statement name="actions">
-          <block type="attend_user" id="1eyK2xPd_@NKAn~-DVr0">
-            <field name="user">that user</field>
+          <block type="action_voice" id="-QhbG%RS5ks8u@pWrsX1">
+            <field name="voice">Danielle-Neural (en-US) - Amazon Polly</field>
             <next>
               <block type="goto" id="K|fsIh#OOnf61w^/ff!y">
                 <field name="stateName">greeting</field>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
-    </next>
-  </block>
-  <block type="state" id="w~bU-1w328DPd7?ThuoS" x="-150" y="-259">
-    <field name="stateName">greeting</field>
-    <statement name="actions">
-      <block type="listen" id="ERau`q|:[G]Q_r[-;+]|"></block>
     </statement>
-    <next>
-      <block type="onresponse_intent" id="{o]2lu[5}+VlJ6m~jZWu">
-        <value name="intent">
-          <block type="intent_greeting" id=",-Ydu5GDXvZQ}|JH%Snu"></block>
-        </value>
-        <statement name="actions">
-          <block type="say_utterance" id="#ax.+oVHE(|D;s.Fo#(5">
-            <statement name="utterance">
-              <block type="utt_text" id="(8nNO!e_X+20^N0gyG_Z">
-                <field name="text">hello</field>
-              </block>
-            </statement>
-            <next>
-              <block type="goto" id="|PkPv1`A6ChcM?``N,$I">
-                <field name="stateName">smallTalk</field>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </next>
   </block>
   <block type="state" id="IJFm{C+H5Qv%Nki.g2Rr" x="98" y="-271">
     <field name="stateName">smallTalk</field>
@@ -141,6 +91,33 @@
             <next>
               <block type="goto" id="oPaefU,O)=^.qJBU)wpZ">
                 <field name="stateName">userHelp</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="state" id="w~bU-1w328DPd7?ThuoS" x="-136" y="-257">
+    <field name="stateName">greeting</field>
+    <statement name="actions">
+      <block type="listen" id="ERau`q|:[G]Q_r[-;+]|"></block>
+    </statement>
+    <next>
+      <block type="onresponse_intent" id="{o]2lu[5}+VlJ6m~jZWu">
+        <value name="intent">
+          <block type="intent_greeting" id=",-Ydu5GDXvZQ}|JH%Snu"></block>
+        </value>
+        <statement name="actions">
+          <block type="say_utterance" id="#ax.+oVHE(|D;s.Fo#(5">
+            <statement name="utterance">
+              <block type="utt_text" id="(8nNO!e_X+20^N0gyG_Z">
+                <field name="text">hello</field>
+              </block>
+            </statement>
+            <next>
+              <block type="goto" id="|PkPv1`A6ChcM?``N,$I">
+                <field name="stateName">smallTalk</field>
               </block>
             </next>
           </block>
