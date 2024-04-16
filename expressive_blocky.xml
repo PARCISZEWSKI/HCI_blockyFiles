@@ -61,7 +61,7 @@
     <field name="stateName">start</field>
     <statement name="actions">
       <block type="action_texture_dropdown" id="n1Z4a/@{v]|R!XnC/_LT">
-        <field name="texture">Titan</field>
+        <field name="texture">AnimePink</field>
         <next>
           <block type="action_voice" id="-QhbG%RS5ks8u@pWrsX1">
             <field name="voice">Danielle-Neural (en-US) - Amazon Polly</field>
