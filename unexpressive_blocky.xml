@@ -4,7 +4,7 @@
     <variable type="IntentCandidate" id="ec^zzo61#X)Qi-7zY!+=">author</variable>
     <variable type="IntentCandidate" id="%g,jiP9ww@f8K_?C4t~Y">bookTitle</variable>
   </variables>
-  <block type="state" id="gF-xO/VhSG}b=oa4s/9Y" x="1201" y="-461">
+  <block type="state" id="gF-xO/VhSG}b=oa4s/9Y" x="1569" y="-470">
     <field name="stateName">askAuthor</field>
     <statement name="actions">
       <block type="say_utterance" id="N#m%!e.L3{KHxikkx~Ed">
@@ -19,30 +19,44 @@
       </block>
     </statement>
     <next>
-      <block type="onresponse_intent" id="qp:1/pUv^;pV4{}EPpId">
-        <value name="intent">
-          <block type="intent_variable" id="qq:^Z,{3ljq`e^gaPzus">
-            <field name="varname" id="ec^zzo61#X)Qi-7zY!+=" variabletype="IntentCandidate">author</field>
-          </block>
-        </value>
+      <block type="onreentry" id="~LRm+]Jm-QIGCr!C$C?+">
         <statement name="actions">
-          <block type="say_utterance" id="ip~JPPNXE^4l+$A_6{C(">
-            <statement name="utterance">
-              <block type="utt_text" id="3JR5G~*6eLSy_^Yl.TAw">
-                <field name="text">Alright</field>
+          <block type="listen" id="9Z=4lkX)$5WhAT.yp1@?"></block>
+        </statement>
+        <next>
+          <block type="onresponse_intent" id="qp:1/pUv^;pV4{}EPpId">
+            <value name="intent">
+              <block type="intent_variable" id="qq:^Z,{3ljq`e^gaPzus">
+                <field name="varname" id="ec^zzo61#X)Qi-7zY!+=" variabletype="IntentCandidate">author</field>
+              </block>
+            </value>
+            <statement name="actions">
+              <block type="say_utterance" id="ip~JPPNXE^4l+$A_6{C(">
+                <statement name="utterance">
+                  <block type="utt_text" id="3JR5G~*6eLSy_^Yl.TAw">
+                    <field name="text">Alright</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="zNYzHoSRY#RRPp4W1{u[">
+                    <field name="stateName">askTitle</field>
+                  </block>
+                </next>
               </block>
             </statement>
             <next>
-              <block type="goto" id="zNYzHoSRY#RRPp4W1{u[">
-                <field name="stateName">askTitle</field>
+              <block type="onresponse_nothing" id="ws$^9C0cnYj8^sHqbmz-">
+                <statement name="actions">
+                  <block type="reentry" id="STBUP,C;Z=]wG_!rxKMI"></block>
+                </statement>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
     </next>
   </block>
-  <block type="state" id="nvPW$4|YQrGYG-!-EI17" deletable="false" editable="false" x="-551" y="-244">
+  <block type="state" id="nvPW$4|YQrGYG-!-EI17" deletable="false" editable="false" x="-939" y="-291">
     <field name="stateName">start</field>
     <statement name="actions">
       <block type="action_texture_dropdown" id="n1Z4a/@{v]|R!XnC/_LT">
@@ -60,19 +74,53 @@
       </block>
     </statement>
   </block>
-  <block type="state" id="IJFm{C+H5Qv%Nki.g2Rr" x="98" y="-271">
-    <field name="stateName">smallTalk</field>
+  <block type="state" id="w~bU-1w328DPd7?ThuoS" x="-416" y="-257">
+    <field name="stateName">greeting</field>
     <statement name="actions">
-      <block type="say_utterance" id="9vCWi;TI*sVqQN!eZblg">
-        <statement name="utterance">
-          <block type="utt_text" id="lC!gDD_j1aw2}NC}JPb*">
-            <field name="text">How are you?</field>
+      <block type="listen" id="ERau`q|:[G]Q_r[-;+]|"></block>
+    </statement>
+    <next>
+      <block type="onresponse_intent" id="{o]2lu[5}+VlJ6m~jZWu">
+        <value name="intent">
+          <block type="intent_greeting" id=",-Ydu5GDXvZQ}|JH%Snu"></block>
+        </value>
+        <statement name="actions">
+          <block type="say_utterance" id="#ax.+oVHE(|D;s.Fo#(5">
+            <statement name="utterance">
+              <block type="utt_text" id="(8nNO!e_X+20^N0gyG_Z">
+                <field name="text">hello</field>
+              </block>
+            </statement>
+            <next>
+              <block type="say_utterance" id="9vCWi;TI*sVqQN!eZblg">
+                <statement name="utterance">
+                  <block type="utt_text" id="lC!gDD_j1aw2}NC}JPb*">
+                    <field name="text">How are you?</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="|PkPv1`A6ChcM?``N,$I">
+                    <field name="stateName">smallTalk</field>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </statement>
         <next>
-          <block type="listen" id="0~_KwEzfQ#k@GE.qptaT"></block>
+          <block type="onresponse_nothing" id="CkCTDBAJ8CL8)*w@v=V6">
+            <statement name="actions">
+              <block type="reentry" id="q0W*:~$mh6b5m!wenULq"></block>
+            </statement>
+          </block>
         </next>
       </block>
+    </next>
+  </block>
+  <block type="state" id="IJFm{C+H5Qv%Nki.g2Rr" x="98" y="-270">
+    <field name="stateName">smallTalk</field>
+    <statement name="actions">
+      <block type="listen" id="0~_KwEzfQ#k@GE.qptaT"></block>
     </statement>
     <next>
       <block type="onresponse_intent" id="L5SK^1R?C*X=i~,o6/%]">
@@ -95,37 +143,55 @@
             </next>
           </block>
         </statement>
+        <next>
+          <block type="onresponse_nothing" id="T]i3r5a%*056n?rcP~6|">
+            <statement name="actions">
+              <block type="reentry" id="{X`DPiho0[RGK|:mn{ke"></block>
+            </statement>
+          </block>
+        </next>
       </block>
     </next>
   </block>
-  <block type="state" id="w~bU-1w328DPd7?ThuoS" x="-136" y="-257">
-    <field name="stateName">greeting</field>
+  <block type="state" id="0$g9VPBbUM,;XM2=c|AK" x="572" y="-227">
+    <field name="stateName">userHelp</field>
     <statement name="actions">
-      <block type="listen" id="ERau`q|:[G]Q_r[-;+]|"></block>
+      <block type="say_utterance" id="fn[PPDGhM_l7PI7Nz:M[">
+        <statement name="utterance">
+          <block type="utt_text" id="0t[,dOvLIZa]/~xg9;85">
+            <field name="text">What service can I provide to you today?</field>
+          </block>
+        </statement>
+        <next>
+          <block type="listen" id="7Z?.e.hpt6!H%=g/=!oW"></block>
+        </next>
+      </block>
     </statement>
     <next>
-      <block type="onresponse_intent" id="{o]2lu[5}+VlJ6m~jZWu">
-        <value name="intent">
-          <block type="intent_greeting" id=",-Ydu5GDXvZQ}|JH%Snu"></block>
-        </value>
+      <block type="onreentry" id="h$W3-o^y5GL=Vn7[6=s[">
         <statement name="actions">
-          <block type="say_utterance" id="#ax.+oVHE(|D;s.Fo#(5">
-            <statement name="utterance">
-              <block type="utt_text" id="(8nNO!e_X+20^N0gyG_Z">
-                <field name="text">hello</field>
+          <block type="listen" id="UQ|18jRiHK:^?ap}:QGm"></block>
+        </statement>
+        <next>
+          <block type="onresponse_any" id="twsImcX/B48MNB^H`eyi">
+            <statement name="actions">
+              <block type="goto" id="yEg|:!Y(3^dEx(PP0M?8">
+                <field name="stateName">bookSearch</field>
               </block>
             </statement>
             <next>
-              <block type="goto" id="|PkPv1`A6ChcM?``N,$I">
-                <field name="stateName">smallTalk</field>
+              <block type="onresponse_nothing" id="OBKD;pCQvX+6n.,XMIl*">
+                <statement name="actions">
+                  <block type="reentry" id=")d7j2s*;@!-?^MKN[sz^"></block>
+                </statement>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
     </next>
   </block>
-  <block type="state" id="=n.FS#4FdX^RF.OK|;zT" x="780" y="-276">
+  <block type="state" id="=n.FS#4FdX^RF.OK|;zT" x="1061" y="-252">
     <field name="stateName">bookSearch</field>
     <statement name="actions">
       <block type="say_utterance" id="`K(im}/er7u9np!S@~X9">
@@ -149,55 +215,68 @@
       </block>
     </statement>
     <next>
-      <block type="onresponse_intent" id="0tfRH~*V=}HT)tb_B${}">
-        <value name="intent">
-          <block type="intent_yes" id="~bTU$o?2T@6X8vN7a,6u"></block>
-        </value>
+      <block type="onreentry" id="+jf^BS#Bz%N[InH,{[Nb">
         <statement name="actions">
-          <block type="goto" id="0m^!cek-$_!CV_pwF-0v">
-            <field name="stateName">askAuthor</field>
-          </block>
+          <block type="listen" id="}j1MD{LE@I6htdvls_LH"></block>
         </statement>
         <next>
-          <block type="onresponse_intent" id="kr^55T^n}-*%}TzyA%Fq">
+          <block type="onresponse_intent" id="WgL3^$2CUpM_h57Ju%ax">
             <value name="intent">
-              <block type="intent_no" id="g^Rf15E_UC6`|qF+ub?K"></block>
+              <block type="intent_variable" id=";=5Y-^AdQN3Q]|B6zrjp">
+                <field name="varname" id="ec^zzo61#X)Qi-7zY!+=" variabletype="IntentCandidate">author</field>
+              </block>
             </value>
             <statement name="actions">
-              <block type="goto" id="F!#KBS~VHAkgi6X{aMU8">
-                <field name="stateName">askTitle</field>
+              <block type="say_utterance" id="u6[UbOf8))!cmcP)Ro{L">
+                <statement name="utterance">
+                  <block type="utt_text" id="8Z{2dbyS}`f#=A{Mx|7r">
+                    <field name="text">Alright</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="Sb(aG$eix@=lSF_[|}*j">
+                    <field name="stateName">askTitle</field>
+                  </block>
+                </next>
               </block>
             </statement>
+            <next>
+              <block type="onresponse_intent" id="0tfRH~*V=}HT)tb_B${}">
+                <value name="intent">
+                  <block type="intent_yes" id="~bTU$o?2T@6X8vN7a,6u"></block>
+                </value>
+                <statement name="actions">
+                  <block type="goto" id="0m^!cek-$_!CV_pwF-0v">
+                    <field name="stateName">askAuthor</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="onresponse_intent" id="kr^55T^n}-*%}TzyA%Fq">
+                    <value name="intent">
+                      <block type="intent_no" id="g^Rf15E_UC6`|qF+ub?K"></block>
+                    </value>
+                    <statement name="actions">
+                      <block type="goto" id="F!#KBS~VHAkgi6X{aMU8">
+                        <field name="stateName">askTitle</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="onresponse_nothing" id="Is_,rb;1Khqg,r+@fq^{">
+                        <statement name="actions">
+                          <block type="reentry" id="7a2EBw-2@Al,Lf^J8I%e"></block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </next>
       </block>
     </next>
   </block>
-  <block type="state" id="0$g9VPBbUM,;XM2=c|AK" x="408" y="-245">
-    <field name="stateName">userHelp</field>
-    <statement name="actions">
-      <block type="say_utterance" id="fn[PPDGhM_l7PI7Nz:M[">
-        <statement name="utterance">
-          <block type="utt_text" id="0t[,dOvLIZa]/~xg9;85">
-            <field name="text">What service can I provide to you today?</field>
-          </block>
-        </statement>
-        <next>
-          <block type="listen" id="7Z?.e.hpt6!H%=g/=!oW"></block>
-        </next>
-      </block>
-    </statement>
-    <next>
-      <block type="onresponse_any" id="twsImcX/B48MNB^H`eyi">
-        <statement name="actions">
-          <block type="goto" id="yEg|:!Y(3^dEx(PP0M?8">
-            <field name="stateName">bookSearch</field>
-          </block>
-        </statement>
-      </block>
-    </next>
-  </block>
-  <block type="state" id=")E%c:r~Pt=[%2Y_|P0-O" x="2394" y="-333">
+  <block type="state" id=")E%c:r~Pt=[%2Y_|P0-O" x="3074" y="-310">
     <field name="stateName">information</field>
     <statement name="actions">
       <block type="say_utterance" id="~F?HA7t};.jRzJ/Fhat=">
@@ -239,64 +318,58 @@
       </block>
     </statement>
     <next>
-      <block type="onresponse_intent" id=".sm)`T{)%[m183zstXhC">
-        <value name="intent">
-          <block type="intent_yes" id="prMptksq?zm/;dnUnGnh"></block>
-        </value>
+      <block type="onreentry" id="|$rI)?NTTng[y!C,yP.l">
         <statement name="actions">
-          <block type="say_utterance" id="!:nyKL%y#TH(*IRZfXr[">
-            <statement name="utterance">
-              <block type="utt_text" id="M)w5%m.1Va8zW,yXlQFY">
-                <field name="text">Alright perfect the book should be ready at the pickup desk in 10 minutes</field>
-              </block>
-            </statement>
-            <next>
-              <block type="goto" id="_jD-X2uSOdTv{pvq1Nh_">
-                <field name="stateName">exitWait</field>
-              </block>
-            </next>
-          </block>
-        </statement>
-      </block>
-    </next>
-  </block>
-  <block type="state" id="!JVdJ7xxAnmO;_X@tEZE" x="1492" y="-283">
-    <field name="stateName">correctBook</field>
-    <statement name="actions">
-      <block type="say_utterance" id="73oo]LaP$F(,w5R,rJcw">
-        <statement name="utterance">
-          <block type="utt_text" id="}s+N/UVQsYK|jmZ2JnTB">
-            <field name="text">Is the book you are looking for Deep learning by Ian Goodfellow and Yoshua Bengio?</field>
-          </block>
+          <block type="listen" id="w8LjsFCJa+iLav|[abUX"></block>
         </statement>
         <next>
-          <block type="listen" id="tb4r[z?U*(i?u-SNaHR{"></block>
-        </next>
-      </block>
-    </statement>
-    <next>
-      <block type="onresponse_intent" id="P8y?!t=B|nFS#++OBCZ1">
-        <value name="intent">
-          <block type="intent_yes" id="*@1g3t*6vh%:^pHl8Glb"></block>
-        </value>
-        <statement name="actions">
-          <block type="say_utterance" id="*;=!l0Z4C?wQ;/|EL_cY">
-            <statement name="utterance">
-              <block type="utt_text" id="Di(+7=rBb;46{xN(#ami">
-                <field name="text">Okey, perfect</field>
+          <block type="onresponse_intent" id=".sm)`T{)%[m183zstXhC">
+            <value name="intent">
+              <block type="intent_yes" id="prMptksq?zm/;dnUnGnh"></block>
+            </value>
+            <statement name="actions">
+              <block type="say_utterance" id="!:nyKL%y#TH(*IRZfXr[">
+                <statement name="utterance">
+                  <block type="utt_text" id="M)w5%m.1Va8zW,yXlQFY">
+                    <field name="text">Alright perfect, the book should be ready at the pickup desk in 10 minutes</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="_jD-X2uSOdTv{pvq1Nh_">
+                    <field name="stateName">exitWait</field>
+                  </block>
+                </next>
               </block>
             </statement>
             <next>
-              <block type="goto" id="(lmrpZqAc*F{QHWr)T[|">
-                <field name="stateName">askLoan</field>
+              <block type="onresponse_any" id="%B*C`zvMF$p#3#cp4wh2">
+                <statement name="actions">
+                  <block type="say_utterance" id="0EMbuM_KqKQ0Z.qS|23~">
+                    <statement name="utterance">
+                      <block type="utt_text" id="Hi!x[z367tXWY==}9vG1">
+                        <field name="text">unfortunately I need a clear confirmation of the terms and conditions</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="reentry" id="t7hq(tdr@)18VS@7]a.h"></block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="onresponse_nothing" id="NJa8~ZaI,LQ_r_k=G2Vf">
+                    <statement name="actions">
+                      <block type="reentry" id="[07UGee^}jk*4m^~:39b"></block>
+                    </statement>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
     </next>
   </block>
-  <block type="state" id=".}e=PVVHJZDPN?O1:X=`" x="2883" y="-354">
+  <block type="state" id=".}e=PVVHJZDPN?O1:X=`" x="3606" y="-329">
     <field name="stateName">exitWait</field>
     <statement name="actions">
       <block type="listen" id="WI;?DWu??ZeF5vZnx0/y"></block>
@@ -340,7 +413,7 @@
                   <block type="say_utterance" id="SKR},KTI5F8PRejZk}(7">
                     <statement name="utterance">
                       <block type="utt_text" id="G(6#;K@jXo00G+14wLqS">
-                        <field name="text">Feel free to go and and pick up your book</field>
+                        <field name="text">Feel free to go and pick up your book</field>
                       </block>
                     </statement>
                     <next>
@@ -355,7 +428,57 @@
       </block>
     </next>
   </block>
-  <block type="state" id="!0:z~[V^(Tmq=^2kfS,Y" x="1923" y="-281">
+  <block type="state" id="!JVdJ7xxAnmO;_X@tEZE" x="2114" y="-249">
+    <field name="stateName">correctBook</field>
+    <statement name="actions">
+      <block type="say_utterance" id="73oo]LaP$F(,w5R,rJcw">
+        <statement name="utterance">
+          <block type="utt_text" id="}s+N/UVQsYK|jmZ2JnTB">
+            <field name="text">Is the book you are looking for Deep learning by Ian Goodfellow and Yoshua Bengio?</field>
+          </block>
+        </statement>
+        <next>
+          <block type="listen" id="tb4r[z?U*(i?u-SNaHR{"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="onreentry" id=";TkB0];u9E9]b8mZ*2B9">
+        <statement name="actions">
+          <block type="listen" id="~#=T0]PpU/o|jctN/iGM"></block>
+        </statement>
+        <next>
+          <block type="onresponse_intent" id="P8y?!t=B|nFS#++OBCZ1">
+            <value name="intent">
+              <block type="intent_yes" id="*@1g3t*6vh%:^pHl8Glb"></block>
+            </value>
+            <statement name="actions">
+              <block type="say_utterance" id="*;=!l0Z4C?wQ;/|EL_cY">
+                <statement name="utterance">
+                  <block type="utt_text" id="Di(+7=rBb;46{xN(#ami">
+                    <field name="text">Okey, perfect</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="(lmrpZqAc*F{QHWr)T[|">
+                    <field name="stateName">askLoan</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="onresponse_nothing" id="Tzt(bMa:N4~?{uTb%Yqj">
+                <statement name="actions">
+                  <block type="reentry" id="UrdgT__Ur7@Goqwf=WBx"></block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="state" id="!0:z~[V^(Tmq=^2kfS,Y" x="2588" y="-266">
     <field name="stateName">askLoan</field>
     <statement name="actions">
       <block type="say_utterance" id="PRgc[7+F6((DOGevTX69">
@@ -370,28 +493,60 @@
       </block>
     </statement>
     <next>
-      <block type="onresponse_intent" id="c4Q,GU(7@5hNJ|6rFx{v">
-        <value name="intent">
-          <block type="intent_yes" id="A6e(3)g}o^T4)hnwe=K#"></block>
-        </value>
+      <block type="onreentry" id="4HsUL229je(pJ!c)Q^E^">
         <statement name="actions">
-          <block type="say_utterance" id="Hj(0j#Jtm~@adlK3CExs">
-            <statement name="utterance">
-              <block type="utt_text" id="SQg~=m?iwqs8~$Pt$itK">
-                <field name="text">I will need to go over the terms and condition of the library before proceeding</field>
+          <block type="listen" id="WwBek0nnBbCY7iq?VB[V"></block>
+        </statement>
+        <next>
+          <block type="onresponse_intent" id="c4Q,GU(7@5hNJ|6rFx{v">
+            <value name="intent">
+              <block type="intent_yes" id="A6e(3)g}o^T4)hnwe=K#"></block>
+            </value>
+            <statement name="actions">
+              <block type="say_utterance" id="Hj(0j#Jtm~@adlK3CExs">
+                <statement name="utterance">
+                  <block type="utt_text" id="SQg~=m?iwqs8~$Pt$itK">
+                    <field name="text">I will need to go over the terms and condition of the library before proceeding</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="l*g#i_$Np5M4p-:][?2A">
+                    <field name="stateName">information</field>
+                  </block>
+                </next>
               </block>
             </statement>
             <next>
-              <block type="goto" id="l*g#i_$Np5M4p-:][?2A">
-                <field name="stateName">information</field>
+              <block type="onresponse_any" id="1q:c-Wr^UZm?][.7*LIF">
+                <statement name="actions">
+                  <block type="say_utterance" id="BB=tzyB-06r@-B#+V#v`">
+                    <statement name="utterance">
+                      <block type="utt_text" id="`_ps`i]DfC+clV*#PZ8U">
+                        <field name="text">Unfortunetly there isn't anything else I can do for you</field>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="goto" id="l,J2YXxzo%z~-g*Q/C[o">
+                        <field name="stateName">exitWait</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="onresponse_nothing" id="_~c:N%;JV,UrgVCkh|yK">
+                    <statement name="actions">
+                      <block type="reentry" id="1C#M?wa0w?TMi|XM.u(@"></block>
+                    </statement>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
     </next>
   </block>
-  <block type="state" id="D0wrE{bj$90@ARx2I?rN" x="1198" y="-145">
+  <block type="state" id="D0wrE{bj$90@ARx2I?rN" x="1566" y="42">
     <field name="stateName">askTitle</field>
     <statement name="actions">
       <block type="say_utterance" id="Haq_hbiKY-a5:2^Sr#;7">
@@ -406,26 +561,40 @@
       </block>
     </statement>
     <next>
-      <block type="onresponse_intent" id="+0iW%D3NU2e1^ikbd*/q">
-        <value name="intent">
-          <block type="intent_variable" id="=mlu^flSbDLWHV:ZkGdD">
-            <field name="varname" id="%g,jiP9ww@f8K_?C4t~Y" variabletype="IntentCandidate">bookTitle</field>
-          </block>
-        </value>
+      <block type="onreentry" id="`UYcE,j[xBk:wucQ}92M">
         <statement name="actions">
-          <block type="say_utterance" id="{{XbuArFHi}Mz;S$knfH">
-            <statement name="utterance">
-              <block type="utt_text" id="oG~[*P2xldoo;KovX_i-">
-                <field name="text">Alright give me a second to look it up</field>
+          <block type="listen" id="4e=5R5[VQ-)MrX=2T/Yj"></block>
+        </statement>
+        <next>
+          <block type="onresponse_intent" id="+0iW%D3NU2e1^ikbd*/q">
+            <value name="intent">
+              <block type="intent_variable" id="=mlu^flSbDLWHV:ZkGdD">
+                <field name="varname" id="%g,jiP9ww@f8K_?C4t~Y" variabletype="IntentCandidate">bookTitle</field>
+              </block>
+            </value>
+            <statement name="actions">
+              <block type="say_utterance" id="{{XbuArFHi}Mz;S$knfH">
+                <statement name="utterance">
+                  <block type="utt_text" id="oG~[*P2xldoo;KovX_i-">
+                    <field name="text">Alright give me a second to look it up</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="goto" id="_9caY3I~B2|8|z5~%*_@">
+                    <field name="stateName">correctBook</field>
+                  </block>
+                </next>
               </block>
             </statement>
             <next>
-              <block type="goto" id="_9caY3I~B2|8|z5~%*_@">
-                <field name="stateName">correctBook</field>
+              <block type="onresponse_nothing" id="`o;Ak3J`nW_`V0cQ?..^">
+                <statement name="actions">
+                  <block type="reentry" id="BS4#9QnkQrN94N%ug3D9"></block>
+                </statement>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
     </next>
   </block>
@@ -451,6 +620,11 @@
                             <next>
                               <block type="intent_example" id=".6WpE#o7,D@BqP2_)/Ik">
                                 <field name="text">all right</field>
+                                <next>
+                                  <block type="intent_example" id="DT.O?`[P2B4X/0haHbtS">
+                                    <field name="text">average</field>
+                                  </block>
+                                </next>
                               </block>
                             </next>
                           </block>
@@ -479,6 +653,36 @@
                 <next>
                   <block type="intent_example" id="eulLy(eo}tU,P-lwd*y^">
                     <field name="text">Ian Goodfellow</field>
+                    <next>
+                      <block type="intent_example" id="LU9qN)}O$kiOm6@g]emq">
+                        <field name="text">Bengio</field>
+                        <next>
+                          <block type="intent_example" id="Elnv|hHkVNx^GChn{K*A">
+                            <field name="text">Yoshua Bengio</field>
+                            <next>
+                              <block type="intent_example" id="jPpSM^zBH!SmHFG`OFM4">
+                                <field name="text">Bengio</field>
+                                <next>
+                                  <block type="intent_example" id="OCkzqyU]t9k~jk/qodq1">
+                                    <field name="text">Aaron Courville</field>
+                                    <next>
+                                      <block type="intent_example" id=",jwM75.:prlm]~QX$rV!">
+                                        <field name="text">Courville</field>
+                                        <next>
+                                          <block type="intent_example" id="#=4xnxc!@Ofw5025y=E[">
+                                            <field name="text">Aaron</field>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
