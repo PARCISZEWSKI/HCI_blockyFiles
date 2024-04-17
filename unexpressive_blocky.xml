@@ -517,28 +517,10 @@
               </block>
             </statement>
             <next>
-              <block type="onresponse_any" id="1q:c-Wr^UZm?][.7*LIF">
+              <block type="onresponse_nothing" id="_~c:N%;JV,UrgVCkh|yK">
                 <statement name="actions">
-                  <block type="say_utterance" id="BB=tzyB-06r@-B#+V#v`">
-                    <statement name="utterance">
-                      <block type="utt_text" id="`_ps`i]DfC+clV*#PZ8U">
-                        <field name="text">Unfortunetly there isn't anything else I can do for you</field>
-                      </block>
-                    </statement>
-                    <next>
-                      <block type="goto" id="l,J2YXxzo%z~-g*Q/C[o">
-                        <field name="stateName">exitWait</field>
-                      </block>
-                    </next>
-                  </block>
+                  <block type="reentry" id="1C#M?wa0w?TMi|XM.u(@"></block>
                 </statement>
-                <next>
-                  <block type="onresponse_nothing" id="_~c:N%;JV,UrgVCkh|yK">
-                    <statement name="actions">
-                      <block type="reentry" id="1C#M?wa0w?TMi|XM.u(@"></block>
-                    </statement>
-                  </block>
-                </next>
               </block>
             </next>
           </block>
